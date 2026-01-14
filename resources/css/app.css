@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color Palette Variables */
+:root {
+    --color-white: #FFFFFF;
+    --color-purple: #B153D7;
+    --color-deep-purple: #4D2FB2;
+    --color-purple-light: #C77FE8;
+    --color-purple-dark: #3A1F8C;
+}
+
+/* Purple Gradient Utilities */
+.bg-gradient-purple {
+    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-deep-purple) 100%);
+}
+
+.bg-gradient-purple-light {
+    background: linear-gradient(135deg, var(--color-purple-light) 0%, var(--color-purple) 100%);
+}
+
+.text-gradient-purple {
+    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-deep-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes blob {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Custom Components */
+.btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-deep-purple) 100%);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-purple-light) 0%, var(--color-purple) 100%);
+}
+
+.btn-outline {
+    @apply px-6 py-3 rounded-lg font-semibold border-2 transition-all duration-300;
+    border-color: var(--color-purple);
+    color: var(--color-purple);
+}
+
+.btn-outline:hover {
+    background: var(--color-purple);
+    color: white;
+}
+
+.card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl;
+}
+
+.card-hover {
+    @apply transform hover:-translate-y-2;
+}
+
+/* Navbar Styles */
+.navbar-scrolled {
+    @apply shadow-lg;
+    background: linear-gradient(135deg, rgba(177, 83, 215, 0.95) 0%, rgba(77, 47, 178, 0.95) 100%);
+}
+
+/* Hero Section */
+.hero-overlay {
+    background: linear-gradient(135deg, rgba(77, 47, 178, 0.7) 0%, rgba(177, 83, 215, 0.7) 100%);
+}
+
+/* Package Card Styles */
+.package-card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl;
+}
+
+.package-card:hover {
+    @apply transform -translate-y-2;
+}
+
+.package-badge {
+    @apply absolute top-4 right-4 px-3 py-1 rounded-full text-white text-sm font-semibold;
+    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-deep-purple) 100%);
+}
+
+/* Form Styles */
+.form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all duration-300;
+}
+
+.form-input:focus {
+    border-color: var(--color-purple);
+    box-shadow: 0 0 0 3px rgba(177, 83, 215, 0.1);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    h1 {
+        @apply text-3xl;
+    }
+
+    h2 {
+        @apply text-2xl;
+    }
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 3px solid rgba(177, 83, 215, 0.3);
+    border-top-color: var(--color-purple);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-purple) 0%, var(--color-deep-purple) 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-deep-purple);
+}

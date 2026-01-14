@@ -7,8 +7,9 @@
     <div class="carousel-slide absolute inset-0 {{ $index === 0 ? 'active' : '' }}" style="display: {{ $index === 0 ? 'block' : 'none' }};">
         <div class="relative h-full">
             <!-- Background Image -->
-            <div class="absolute inset-0">
-                <img src="{{ asset('storage/' . $slide->image) }}" alt="Hero Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gray-900">
+                <!-- Mobile: object-contain agar gambar full visible, Desktop: object-cover -->
+                <img src="{{ asset('storage/' . $slide->image) }}" alt="Hero Background" class="w-full h-full object-contain md:object-cover">
                 <div class="absolute inset-0 bg-gradient-purple/80 mix-blend-multiply"></div>
             </div>
             
@@ -16,8 +17,8 @@
             <div class="relative z-10 h-full flex items-center">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div class="text-white max-w-2xl animate-fade-in-up">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4">{{ $slide->title }}</h1>
-                        <p class="text-xl md:text-2xl mb-8">{{ $slide->subtitle }}</p>
+                        <h1 class="text-3xl md:text-6xl font-bold mb-4 bg-[#B153D7] inline-block px-4 py-2 rounded-lg">{{ $slide->title }}</h1>
+                        <p class="text-lg md:text-2xl mb-8 bg-[#B153D7] inline-block px-4 py-2 rounded-lg">{{ $slide->subtitle }}</p>
                         @if($slide->cta_text)
                         <a href="{{ $slide->cta_link ?: ($slide->slug ? route('promo.show', $slide->slug) : '#') }}" class="btn-primary inline-block">
                             {{ $slide->cta_text }}

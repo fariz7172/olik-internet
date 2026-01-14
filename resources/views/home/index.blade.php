@@ -282,15 +282,15 @@
                         
                         <!-- Secondary CTA - WhatsApp with Package Data -->
                         @php
-                            $whatsappMessage = "Halo Olik Internet! 🌐\n\n";
+                            $whatsappMessage = "Halo Olik Internet!\n\n";
                             $whatsappMessage .= "Saya tertarik berlangganan:\n";
-                            $whatsappMessage .= "📦 *{$package->name}*\n";
-                            $whatsappMessage .= "⚡ Kecepatan: {$package->speed}\n";
-                            $whatsappMessage .= "💰 Harga: {$package->formatted_price}/bulan\n";
+                            $whatsappMessage .= "Paket: {$package->name}\n";
+                            $whatsappMessage .= "Kecepatan: {$package->speed}\n";
+                            $whatsappMessage .= "Harga: {$package->formatted_price}/bulan\n";
                             if($package->original_price) {
-                                $whatsappMessage .= "🎉 Hemat {$package->discount_percentage}%\n";
+                                $whatsappMessage .= "Hemat: {$package->discount_percentage}%\n";
                             }
-                            $whatsappMessage .= "\nMohon info lebih lanjut. Terima kasih! 🙏";
+                            $whatsappMessage .= "\nMohon info lebih lanjut. Terima kasih!";
                             $whatsappUrl = 'https://wa.me/6285714017756?text=' . urlencode($whatsappMessage);
                         @endphp
                         

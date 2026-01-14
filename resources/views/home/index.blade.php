@@ -125,7 +125,7 @@
                     </a>
 
                     <!-- WhatsApp Button with Inline Style for Guaranteed Visibility -->
-                    <a href="https://wa.me/6285714017756?text=Halo%20Olik,%20saya%20tertarik%20berlangganan%20internet" 
+                    <a href="https://api.whatsapp.com/send?phone=6285714017756&text=Halo%20Olik,%20saya%20tertarik%20berlangganan%20internet&type=phone_number&app_absent=0" 
                        target="_blank"
                        style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);"
                        class="group flex items-center gap-3 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl font-bold transition-all transform hover:scale-105 hover:brightness-110">
@@ -291,7 +291,7 @@
                                 $whatsappMessage .= "Hemat: {$package->discount_percentage}%\n";
                             }
                             $whatsappMessage .= "\nMohon info lebih lanjut. Terima kasih!";
-                            $whatsappUrl = 'https://wa.me/6285714017756?text=' . urlencode($whatsappMessage);
+                            $whatsappUrl = 'https://api.whatsapp.com/send?phone=6285714017756&text=' . urlencode($whatsappMessage) . '&type=phone_number&app_absent=0';
                         @endphp
                         
                         <a href="{{ $whatsappUrl }}" 

@@ -281,7 +281,16 @@
                         </a>
                         
                         @php
-                            $whatsappUrl = 'https://wa.me/6285714017756';
+                            $whatsappMessage = "Halo Olik Internet!\n\n";
+                            $whatsappMessage .= "Saya tertarik berlangganan:\n";
+                            $whatsappMessage .= "Paket: {$package->name}\n";
+                            $whatsappMessage .= "Kecepatan: {$package->speed}\n";
+                            $whatsappMessage .= "Harga: {$package->formatted_price}/bulan\n";
+                            if($package->original_price) {
+                                $whatsappMessage .= "Hemat: {$package->discount_percentage}%\n";
+                            }
+                            $whatsappMessage .= "\nMohon info lebih lanjut. Terima kasih!";
+                            $whatsappUrl = 'https://wa.me/6285714017756?text=' . urlencode($whatsappMessage);
                         @endphp
                         
                         <a href="{{ $whatsappUrl }}" 

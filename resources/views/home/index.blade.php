@@ -280,6 +280,7 @@
                             Lihat Detail Paket
                         </a>
                         
+                        @php
                             $whatsappUrl = 'https://wa.me/6285714017756';
                         @endphp
                         

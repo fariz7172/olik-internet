@@ -8,8 +8,7 @@
         <div class="relative h-full">
             <!-- Background Image -->
             <div class="absolute inset-0 bg-gray-900">
-                <!-- Mobile: object-contain agar gambar full visible, Desktop: object-cover -->
-                <img src="{{ asset('storage/' . $slide->image) }}" alt="Hero Background" class="w-full h-full object-contain md:object-cover">
+                <img src="{{ asset('storage/' . $slide->image) }}" alt="Hero Background" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-purple/80 mix-blend-multiply"></div>
             </div>
             

@@ -125,7 +125,7 @@
                     </a>
 
                     <!-- WhatsApp Button with Inline Style for Guaranteed Visibility -->
-                    <a href="https://api.whatsapp.com/send?phone=6285714017756&text=Halo%20Olik,%20saya%20tertarik%20berlangganan%20internet&type=phone_number&app_absent=0" 
+                    <a href="https://wa.me/6285714017756" 
                        target="_blank"
                        style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);"
                        class="group flex items-center gap-3 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl font-bold transition-all transform hover:scale-105 hover:brightness-110">
@@ -280,18 +280,7 @@
                             Lihat Detail Paket
                         </a>
                         
-                        <!-- Secondary CTA - WhatsApp with Package Data -->
-                        @php
-                            $whatsappMessage = "Halo Olik Internet!\n\n";
-                            $whatsappMessage .= "Saya tertarik berlangganan:\n";
-                            $whatsappMessage .= "Paket: {$package->name}\n";
-                            $whatsappMessage .= "Kecepatan: {$package->speed}\n";
-                            $whatsappMessage .= "Harga: {$package->formatted_price}/bulan\n";
-                            if($package->original_price) {
-                                $whatsappMessage .= "Hemat: {$package->discount_percentage}%\n";
-                            }
-                            $whatsappMessage .= "\nMohon info lebih lanjut. Terima kasih!";
-                            $whatsappUrl = 'https://api.whatsapp.com/send?phone=6285714017756&text=' . urlencode($whatsappMessage) . '&type=phone_number&app_absent=0';
+                            $whatsappUrl = 'https://wa.me/6285714017756';
                         @endphp
                         
                         <a href="{{ $whatsappUrl }}" 
